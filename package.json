@@ -1,0 +1,29 @@
+{
+  "name": "group-tabs-on-demand",
+  "version": "1.0.0",
+  "description": "A privacy-friendly Chrome extension that groups tabs by domain only when asked.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "Bijan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beejmaxx/group-tabs-on-demand.git"
+  },
+  "bugs": {
+    "url": "https://github.com/beejmaxx/group-tabs-on-demand/issues"
+  },
+  "homepage": "https://github.com/beejmaxx/group-tabs-on-demand#readme",
+  "scripts": {
+    "build": "esbuild src/service-worker.js --bundle --minify --outfile=service-worker.js",
+    "check": "npm run build && node --test",
+    "test": "npm run check",
+    "package": "npm run check && node scripts/package.mjs"
+  },
+  "dependencies": {
+    "tldts": "^7.0.14"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.9"
+  }
+}
